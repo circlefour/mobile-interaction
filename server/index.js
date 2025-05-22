@@ -18,11 +18,20 @@ app.get('/', (req, res) => {
   res.send('<p>it is working</p>');
 });
 
+const connectedDevices = new Map(); // or {}
+
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  console.log('a user connected', socket.id);
+  connectedDevices.set(socket.id, null);
 
   socket.on('shake', (chaos) => {
-    console.log('chaos level: ', chaos);
+    //console.log('chaos level: ', chaos);
+    connectedDevices.set(socket.id, chaos);
+    console.log("All values:", Array.from(connectedDevices.values()));
+  });
+  socket.on("disconnect", () => {
+    console.log("Device disconnected:", socket.id);
+    connectedDevices.delete(socket.id);
   });
 });
 
