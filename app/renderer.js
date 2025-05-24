@@ -1,11 +1,11 @@
 const btn = document.getElementById("start");
 
 btn.addEventListener("click", () => {
-  if (btn.innerHTML == "connect") {
+  if (btn.innerHTML == "𝔠𝔬𝔫𝔫𝔢𝔠𝔱") {
     window.sockAPI.sockConn();
-    btn.innerHTML = "disconnect";
+    btn.innerHTML = "𝔡𝔦𝔰𝔠𝔬𝔫𝔫𝔢𝔠𝔱";
   } else {
     window.sockAPI.sockDiss();
-    btn.innerHTML = "connect";
+    btn.innerHTML = "𝔠𝔬𝔫𝔫𝔢𝔠𝔱";
   }
 });

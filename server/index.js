@@ -3,6 +3,7 @@ const express = require('express');
 const { createServer } = require('node:http');
 const { join } = require('node:path');
 const { Server } = require('socket.io');
+const { avgChaos } = require('./utils/chaos');
 
 const app = express();
 const server = createServer(app);
@@ -18,20 +19,24 @@ app.get('/', (req, res) => {
   res.send('<p>it is working</p>');
 });
 
-const connectedDevices = new Map(); // or {}
+let watcher = null;
+const deviceChaos = new Map(); // or {}
 
 io.on('connection', (socket) => {
   console.log('a user connected', socket.id);
-  connectedDevices.set(socket.id, null);
 
+  socket.on('watcher', () => {
+    console.log('watcher connected:', socket.id);
+    watcher = socket;
+  });
   socket.on('shake', (chaos) => {
-    //console.log('chaos level: ', chaos);
-    connectedDevices.set(socket.id, chaos);
-    console.log("All values:", Array.from(connectedDevices.values()));
+    if (socket !== watcher) deviceChaos.set(socket.id, chaos);
+    const avgchaos = avgChaos(deviceChaos);
+    if (watcher) watcher.emit('chaos', avgchaos);
   });
   socket.on("disconnect", () => {
     console.log("Device disconnected:", socket.id);
-    connectedDevices.delete(socket.id);
+    deviceChaos.delete(socket.id);
   });
 });
 
