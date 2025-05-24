@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+}
+
+.btn-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:150px;
+}
+
+#start {
+  color: black;
+  background-color: red;
+  font-size: 40px;
+}

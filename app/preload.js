@@ -1,5 +1,6 @@
-const { contextBridge } = require('electron/renderer')
+const { contextBridge, ipcRenderer } = require('electron/renderer')
 
-contextBridge.exposeInMainWorld('versions', {
-  sendConfig: (data) => ipcRenderer.send('osc-config', data)
+contextBridge.exposeInMainWorld('sockAPI', {
+  sockConn: () => ipcRenderer.send('sockcon'),
+  sockDiss: () => ipcRenderer.send('sockdis')
 });

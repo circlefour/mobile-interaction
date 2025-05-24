@@ -12,5 +12,9 @@
   "description": "",
   "devDependencies": {
     "electron": "^36.2.1"
+  },
+  "dependencies": {
+    "osc": "^2.4.5",
+    "socket.io-client": "^4.8.1"
   }
 }
