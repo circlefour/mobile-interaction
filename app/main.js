@@ -1,11 +1,12 @@
 const { io } = require("socket.io-client");
 const { app, BrowserWindow, ipcMain } = require('electron/main')
 const path = require('node:path')
+const osc = require('osc');
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 300,
+    height: 200,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
       // if context isolation is true by default, i don't need to explicitly add it
@@ -16,17 +17,35 @@ const createWindow = () => {
 }
 
 let socket = null
+let udpPort = null;
 
 function handleSockConn(event) {
   socket = io('http://localhost:3000');
+
+  udpPort = new osc.UDPPort({
+    remoteAddress: "127.0.0.1",
+    remotePort: 8000
+  });
+
+  udpPort.open();
   
   socket.on('connect', () => {
-    console.log('connecting to server');
+    console.log('connected to server');
     socket.emit('watcher', null);
   });
   
   socket.on('chaos', (data) => {
-    console.log('chaos data:', data);
+    //console.log('chaos data:', data);
+
+    udpPort.send({
+      address: "/chaos/average",
+      args: [
+        {
+          type: "f", // float
+          value: data
+        }
+      ]
+    });
   });
   
   socket.on('disconnect', () => {
@@ -35,6 +54,10 @@ function handleSockConn(event) {
 }
 
 function handleSockDiss(event){
+  if (udpPort) {
+    udpPort.close();
+    udpPort = null;
+  }
   if (!socket) return;
   socket.disconnect();
   socket = null;
