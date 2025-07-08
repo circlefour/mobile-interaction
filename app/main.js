@@ -20,8 +20,10 @@ let socket = null
 let udpPort = null;
 
 function handleSockConn(event) {
+  const backend = "https://mobile-interaction.onrender.com";
   //socket = io("https://chaos-server-dev.up.railway.app/");
-  socket = io('http://localhost:3000');
+  //socket = io('http://localhost:3000');
+  socket = io(backend);
 
   udpPort = new osc.UDPPort({
     remoteAddress: "127.0.0.1",
