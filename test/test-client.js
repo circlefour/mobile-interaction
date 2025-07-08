@@ -7,8 +7,13 @@ const createFakeDevice = (id) => {
     console.log(`Device ${id} connected: ${socket.id}`);
 
     setInterval(() => {
-      const fakeValue = Math.random() * 10; // Replace with real accelerometer-style data
-      socket.emit("shake", fakeValue);
+      //const fakeValue = Math.random() * 10; // Replace with real accelerometer-style data
+      const fakeAccel = {
+        x: Math.random() * 10,
+        y: Math.random() * 10,
+        z: Math.random() * 10,
+      }
+      socket.emit("shake", fakeAccel);
     }, 10); // Sends data every second (1000)
   });
 

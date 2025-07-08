@@ -20,6 +20,7 @@ let socket = null
 let udpPort = null;
 
 function handleSockConn(event) {
+  //socket = io("https://chaos-server-dev.up.railway.app/");
   socket = io('http://localhost:3000');
 
   udpPort = new osc.UDPPort({
@@ -34,15 +35,14 @@ function handleSockConn(event) {
     socket.emit('watcher', null);
   });
   
-  socket.on('chaos', (data) => {
-    //console.log('chaos data:', data);
-
+  socket.on('chaos', (chaos) => {
+    console.log('chaos value received', chaos);
     udpPort.send({
       address: "/chaos/average",
       args: [
         {
           type: "f", // float
-          value: data
+          value: chaos
         }
       ]
     });
