@@ -21,7 +21,6 @@ let udpPort = null;
 
 function handleSockConn(event) {
   const backend = "https://mobile-interaction.onrender.com";
-  //socket = io("https://chaos-server-dev.up.railway.app/");
   //socket = io('http://localhost:3000');
   socket = io(backend);
 
@@ -38,7 +37,7 @@ function handleSockConn(event) {
   });
   
   socket.on('chaos', (chaos) => {
-    console.log('chaos value received', chaos);
+    //console.log('chaos value received', chaos);
     udpPort.send({
       address: "/chaos/average",
       args: [

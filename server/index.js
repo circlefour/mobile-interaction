@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
     }
   });
   socket.on("disconnect", () => {
-    console.log("Device disconnected:", socket.id);
+    console.log("device disconnected:", socket.id);
     ['x','y','z'].forEach(axis => axisChaos[axis].delete(socket.id));
   });
 });
