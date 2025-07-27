@@ -20,7 +20,9 @@ let socket = null
 let udpPort = null;
 
 function handleSockConn(event) {
-  socket = io('http://localhost:3000');
+  const backend = "https://mobile-interaction.onrender.com";
+  //socket = io('http://localhost:3000');
+  socket = io(backend);
 
   udpPort = new osc.UDPPort({
     remoteAddress: "127.0.0.1",
@@ -34,15 +36,14 @@ function handleSockConn(event) {
     socket.emit('watcher', null);
   });
   
-  socket.on('chaos', (data) => {
-    //console.log('chaos data:', data);
-
+  socket.on('chaos', (chaos) => {
+    //console.log('chaos value received', chaos);
     udpPort.send({
       address: "/chaos/average",
       args: [
         {
           type: "f", // float
-          value: data
+          value: chaos["x"],
         }
       ]
     });
