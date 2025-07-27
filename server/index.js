@@ -7,10 +7,10 @@ const { avgChaos } = require('./utils/chaos');
 
 const app = express();
 const server = createServer(app);
-// i forgot what all this means / does
+
 const io = new Server(server, {
   cors: {
-    origin: "*", // actually put in vercel url here when deployed so it's more specific
+    origin: "*", // actually put in vercel url here when deployed
     methods: ["GET", "POST"],
   }
 });
@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 let watcher = null;
-//const deviceChaos = new Map(); // or {}
+
 const axisChaos = {
   x: new Map(),
   y: new Map(),
@@ -35,15 +35,12 @@ io.on('connection', (socket) => {
     watcher = socket;
   });
   socket.on('shake', (chaos) => {
-    //if (socket !== watcher) deviceChaos.set(socket.id, chaos);
     if (socket !== watcher) {
       axisChaos.x.set(socket.id, chaos.x);
       axisChaos.y.set(socket.id, chaos.y);
       axisChaos.z.set(socket.id, chaos.z);
-      //console.log('chaos total', chaos);
-      console.log('chaos total', axisChaos);
+      //console.log('chaos total', axisChaos);
     }
-    //if (watcher) watcher.emit('chaos', Array.from(deviceChaos.values()));
     if (watcher) {
       // actually averaging on this side, not sure if that's better or worse for ahh whateva
       const axisAvg = {
@@ -57,7 +54,6 @@ io.on('connection', (socket) => {
   });
   socket.on("disconnect", () => {
     console.log("Device disconnected:", socket.id);
-    //deviceChaos.delete(socket.id);
     ['x','y','z'].forEach(axis => axisChaos[axis].delete(socket.id));
   });
 });
