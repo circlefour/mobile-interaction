@@ -44,7 +44,7 @@ function handleSockConn(event) {
       args: [
         {
           type: "f", // float
-          value: chaos
+          value: chaos["x"],
         }
       ]
     });
