@@ -48,7 +48,7 @@ i want it to be relatively accessible for people to use. i'm not yet going off s
 2. it should be intuitive. requiring little to no explanation to use.
 3. artists should be able to integrate this into their setups, if they so choose, without needing to know how to code.
 
-live visual tools such as touch designer, max / msp, and unity seem to favour osc [ open sound control ] for networked communication.
+live visual tools such as touch designer, max / msp, and unity seem to favour osc [ open sound control ] for communication.
 
 given this, there's redundancy in the way data gets sent, but i'm not yet sure if that's a problem.
 
@@ -99,11 +99,29 @@ the above goals turned into the following specifications :
 [↑ table of contents](#toc)
 
 ## what it currently does <a name="does"></a>
-## instructions to run it <a name="runit"></a>
+## want to run it? <a name="runit"></a>
+steps to test this out semi locally
+1. clone this repo
+2. run the electron app
+    '''bash
+    cd app
+    npm install
+    npm start
+    '''
+3. accelerometer data gets sent to port 8000 right now. so in whatever program you want to use, navigate there and specify that port for osc in.
+4. open the following link on your phone [phone-shaker](https://phone-shaker.vercel.app)
+5. watch it show up in your program
+
+[ if it doesn't, [let me know](#contact) ]
+
 ## demo <a name="demo"></a>
+## sus circumstances / questions i'm asking myself <a name="sus"></a>
+1. why am i using an electron gui when it is a redundancy af?
+    1. potentially i could ... just have a front end display. but ....... would it be as easily customizable?
 ## contact <a name="contact"></a>
 got any thoughts? insight? words?
 hit me up at :
+
 c_4@gmx.com
 
 [↑ table of contents](#toc)
