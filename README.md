@@ -1,6 +1,8 @@
 # collective behavior
 ♡ ʎq ƃuıddoʇs ɹoɟ noʎ ʞuɐɥʇ : ɟɐ ssǝɹƃoɹd uı sı ǝɯpɐǝɹ sıɥʇ : ǝʇou
 
+let audiences affect your interactive art pieces in real time using their phones with no app downloads or unnecessary overhead.
+
 table of contents <a name="toc"></a>
 
  1. [motivation](#motivation)
