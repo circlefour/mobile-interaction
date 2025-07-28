@@ -16,10 +16,10 @@
 	1. [where it’s at rn](#where)
 	3. [challenges](#challenges)
 	4. [future updates](#updates)
-5. [what it currently does](#does)
+5. [demo](#demo)
 6. [instructions to run it](#runit)
-7. [demo / gifs or videos of it working. how to use it](#demo)
-9. [contact](#contact)
+7. [sus circumstances / questions i'm asking myself](#sus)
+8. [contact](#contact)
 
 ## motivation <a name="motivation"></a>
 i'm interested in exploring audience interaction in live digital art.
@@ -100,7 +100,6 @@ the above goals turned into the following specifications :
 
 [↑ table of contents](#toc)
 
-## what it currently does <a name="does"></a>
 ## demo <a name="demo"></a>
 ## want to run it? <a name="runit"></a>
 steps to test this out semi locally
