@@ -103,11 +103,13 @@ the above goals turned into the following specifications :
 steps to test this out semi locally
 1. clone this repo
 2. run the electron app
-    '''bash
-    cd app
-    npm install
-    npm start
-    '''
+
+```
+cd app
+npm install
+npm start
+```
+
 3. accelerometer data gets sent to port 8000 right now. so in whatever program you want to use, navigate there and specify that port for osc in.
 4. open the following link on your phone [phone-shaker.vercel.app](https://phone-shaker.vercel.app)
 5. watch it show up in your program
