@@ -1,6 +1,8 @@
 # collective behavior
 ♡ ʎq ƃuıddoʇs ɹoɟ noʎ ʞuɐɥʇ : ɟɐ ssǝɹƃoɹd uı sı ǝɯpɐǝɹ sıɥʇ : ǝʇou
 
+![quick demo](assets/demo0.gif)
+
 let audiences affect your interactive art pieces in real time using their phones with no app downloads or unnecessary overhead.
 
 table of contents <a name="toc"></a>
@@ -99,6 +101,7 @@ the above goals turned into the following specifications :
 [↑ table of contents](#toc)
 
 ## what it currently does <a name="does"></a>
+## demo <a name="demo"></a>
 ## want to run it? <a name="runit"></a>
 steps to test this out semi locally
 1. clone this repo
@@ -116,7 +119,8 @@ steps to test this out semi locally
 
 [ if it doesn't, [let me know](#contact) ]
 
-## demo <a name="demo"></a>
+[↑ table of contents](#toc)
+
 ## sus circumstances / questions i'm asking myself <a name="sus"></a>
 1. why am i using an electron gui when it is a redundancy af?
     1. potentially i could ... just have a front end display. but ....... would it be as easily customizable?
