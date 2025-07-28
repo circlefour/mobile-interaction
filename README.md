@@ -1,7 +1,7 @@
 # collective behavior
 ♡ ʎq ƃuıddoʇs ɹoɟ noʎ ʞuɐɥʇ : ɟɐ ssǝɹƃoɹd uı sı ǝɯpɐǝɹ sıɥʇ : ǝʇou
 
-table of contents
+table of contents <a name="toc"></a>
 
  1. [motivation](#motivation)
  2. [goal / what i want it to do](#goal)
@@ -33,6 +33,8 @@ the desire to make this progressed naturally from a piece i created called "surv
 
 i got inspired by seeing how engaged people became when they could directly affect what they saw.
 
+[↑ table of contents](#toc)
+
 ## goal <a name="goal"></a>
 
 my goal for this is to create a general all-purpose type tool that digital artists, including myself, could use to explore interaction and / or collective decision making.
@@ -47,6 +49,8 @@ i want it to be relatively accessible for people to use. i'm not yet going off s
 live visual tools such as touch designer, max / msp, and unity seem to favour osc [ open sound control ] for networked communication.
 
 given this, there's redundancy in the way data gets sent, but i'm not yet sure if that's a problem.
+
+[↑ table of contents](#toc)
 
 ## architecture <a name="arch"></a>
 ### ideal specifications <a name="specs"></a>
@@ -67,6 +71,7 @@ the above goals turned into the following specifications :
 | **socket bridge server**  | receives sensor data and routes to artist control system via socket.io.  | node.js, socket.io  |
 | **desktop gui**     | electron app sends sensor data to artist's local port via osc protocol. wip : to configure and monitor inputs, choose sensors. | electron    |
 
+[↑ table of contents](#toc)
 
 ## process <a name="process"></a>
 #### where it's at rn<a name="where"></a>
@@ -88,6 +93,9 @@ the above goals turned into the following specifications :
 - analytics / logging dashboard
 - auth / roles
 - web ui alternative to electron [ maybe ]
+
+[↑ table of contents](#toc)
+
 ## what it currently does <a name="does"></a>
 ## instructions to run it <a name="runit"></a>
 ## demo <a name="demo"></a>
@@ -96,3 +104,4 @@ got any thoughts? insight? words?
 hit me up at :
 c_4@gmx.com
 
+[↑ table of contents](#toc)
