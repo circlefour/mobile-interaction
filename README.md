@@ -5,7 +5,7 @@
 
 ![quick demo](assets/demo0.gif)
 
-table of contents <a name="toc"></a>
+**table of contents** <a name="toc"></a>
 
  1. [motivation](#motivation)
  2. [goal / what i want it to do](#goal)
