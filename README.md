@@ -1,9 +1,9 @@
 # collective behavior
 ♡ ʎq ƃuıddoʇs ɹoɟ noʎ ʞuɐɥʇ : ɟɐ ssǝɹƃoɹd uı sı ǝɯpɐǝɹ sıɥʇ : ǝʇou
 
-![quick demo](assets/demo0.gif)
+*let audiences affect your interactive art pieces in real time using their phones with no app downloads or unnecessary overhead.*
 
-***let audiences affect your interactive art pieces in real time using their phones with no app downloads or unnecessary overhead.***
+![quick demo](assets/demo0.gif)
 
 table of contents <a name="toc"></a>
 
