@@ -109,7 +109,7 @@ steps to test this out semi locally
     npm start
     '''
 3. accelerometer data gets sent to port 8000 right now. so in whatever program you want to use, navigate there and specify that port for osc in.
-4. open the following link on your phone [phone-shaker](https://phone-shaker.vercel.app)
+4. open the following link on your phone [phone-shaker.vercel.app](https://phone-shaker.vercel.app)
 5. watch it show up in your program
 
 [ if it doesn't, [let me know](#contact) ]
